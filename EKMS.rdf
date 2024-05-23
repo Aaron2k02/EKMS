@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com/"
+     xml:base="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#HasMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#HasMeasure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Strategy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#HasStrategy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#HasStrategy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Strategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#hasEnvironmentalImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#hasEnvironmentalImpact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalImpact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#hasSustainablePractice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#hasSustainablePractice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#SustainablePractice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#isSubcategoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#isSubcategoryOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Biodiversity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Biodiversity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#CarbonEmissions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#CarbonEmissions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnergyWaterUse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnergyWaterUse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalImpact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalImpact"/>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Measure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Measure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#ResourceUse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#ResourceUse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Strategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#Strategy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#SustainablePractice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#SustainablePractice"/>
+    
+
+
+    <!-- http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#WasteGeneration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#WasteGeneration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/huawei/ontologies/2024/4/environmental.com#EnvironmentalAspect"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
