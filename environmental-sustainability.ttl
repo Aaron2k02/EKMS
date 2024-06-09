@@ -1,0 +1,245 @@
+@prefix : <http://neo4j.com/vocabulary/environmental-sustainability#> .
+@prefix g: <http://www.semanticweb.org/muqriqawiem/ontologies/2024/4/environmental-sustainability.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://neo4j.com/vocabulary/environmental-sustainability#> .
+
+<http://neo4j.com/vocabulary/environmental-sustainability#> rdf:type owl:Ontology ;
+                                                             rdfs:comment "Ontology for environmental sustainability KMS."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#advises
+:advises rdf:type owl:ObjectProperty ;
+         rdfs:domain :Advisor ;
+         rdfs:range :User .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasEnvironmentalProfile
+:hasEnvironmentalProfile rdf:type owl:ObjectProperty ;
+                         rdfs:domain :User ;
+                         rdfs:range :EnironmentalProfile .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasSustainabilityGoal
+:hasSustainabilityGoal rdf:type owl:ObjectProperty ;
+                       rdfs:domain :User ;
+                       rdfs:range :SustainabilityGoal .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#recommends
+:recommends rdf:type owl:ObjectProperty ;
+            rdfs:domain :EnironmentalProfile ,
+                        :SustainabilityGoal ;
+            rdfs:range :SustainablePractice .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasAddress
+:hasAddress rdf:type owl:DatatypeProperty ;
+            rdfs:domain :User ;
+            rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasAge
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:domain :User ;
+        rdfs:range xsd:integer .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasCost
+:hasCost rdf:type owl:DatatypeProperty ;
+         rdfs:domain :SustainablePractice ;
+         rdfs:range xsd:decimal .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SustainabilityGoal ,
+                            :SustainablePractice ;
+                rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Advisor ,
+                      :User ;
+          rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasExperience
+:hasExperience rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Advisor ;
+               rdfs:range xsd:decimal .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasImpactScore
+:hasImpactScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :EnironmentalProfile ;
+                rdfs:range xsd:decimal .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasImplementationTime
+:hasImplementationTime rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :SustainablePractice ;
+                       rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Advisor ,
+                     :User ;
+         rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasPhoneNumber
+:hasPhoneNumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Advisor ,
+                            :User ;
+                rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasQualification
+:hasQualification rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Advisor ;
+                  rdfs:range xsd:string .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#hasTargetDate
+:hasTargetDate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SustainabilityGoal ;
+               rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#Advisor
+:Advisor rdf:type owl:Class .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#EnironmentalProfile
+:EnironmentalProfile rdf:type owl:Class .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#SustainabilityGoal
+:SustainabilityGoal rdf:type owl:Class .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#SustainablePractice
+:SustainablePractice rdf:type owl:Class .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#User
+:User rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#AchieveZeroWaste
+:AchieveZeroWaste rdf:type owl:NamedIndividual ,
+                           :SustainabilityGoal ;
+                  :recommends :WasteReduction ;
+                  :hasDescription "Aim to achieve zero waste by the end of 2025." .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#ConserveWater
+:ConserveWater rdf:type owl:NamedIndividual ,
+                        :SustainabilityGoal ;
+               :recommends :WaterConservation ;
+               :hasDescription "Aim to conserve water by 50% by the end of 2025." .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#EnergyEfficiency
+:EnergyEfficiency rdf:type owl:NamedIndividual ,
+                           :SustainablePractice ;
+                  :hasCost 1500 ;
+                  :hasDescription "Implement energy-efficient lighting and appliances." ;
+                  :hasImplementationTime "6 months" .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#HighImpact
+:HighImpact rdf:type owl:NamedIndividual ,
+                     :EnironmentalProfile ;
+            :recommends :WasteReduction ;
+            :hasImpactScore 9 .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#Jane
+:Jane rdf:type owl:NamedIndividual ,
+               :Advisor ;
+      :advises :Mike ;
+      :hasEmail "jane.smith@gmail.com" ;
+      :hasExperience 10 ;
+      :hasName "Jane Smith" ;
+      :hasPhoneNumber "098-765-4321" ;
+      :hasQualification "Certified Environmental Consultant" .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#LowImpact
+:LowImpact rdf:type owl:NamedIndividual ,
+                    :EnironmentalProfile ;
+           :recommends :RenewableEnergy ;
+           :hasImpactScore 3 .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#Mike
+:Mike rdf:type owl:NamedIndividual ,
+               :User ;
+      :hasAddress "123 Green Street, Eco City" ;
+      :hasAge 35 ;
+      :hasEmail "mike@gmail.com" ;
+      :hasName "Mkie" ;
+      :hasPhoneNumber "123-456-7890" .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#ModerateImpact
+:ModerateImpact rdf:type owl:NamedIndividual ,
+                         :EnironmentalProfile ;
+                :recommends :EnergyEfficiency ;
+                :hasImpactScore 7 .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#ReduceCarbonFootprint
+:ReduceCarbonFootprint rdf:type owl:NamedIndividual ,
+                                :SustainabilityGoal ;
+                       :recommends :EnergyEfficiency ;
+                       :hasDescription "Aim to reduce carbon footprint by 50% by the end of 2025." .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#RenewableEnergy
+:RenewableEnergy rdf:type owl:NamedIndividual ,
+                          :SustainablePractice ;
+                 :hasCost 5000 ;
+                 :hasDescription "Install solar panels and wind turbines to generate renewable energy." ;
+                 :hasImplementationTime "12 months" .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#WasteReduction
+:WasteReduction rdf:type owl:NamedIndividual ,
+                         :SustainablePractice ;
+                :hasCost 300 ;
+                :hasDescription "Implement a comprehensive recycling program and reduce single-use plastics." ;
+                :hasImplementationTime "3 months" .
+
+
+###  http://neo4j.com/vocabulary/environmental-sustainability#WaterConservation
+:WaterConservation rdf:type owl:NamedIndividual ,
+                            :SustainablePractice ;
+                   :hasCost 800 ;
+                   :hasDescription "Install low-flow fixtures and implement rainwater harvesting." ;
+                   :hasImplementationTime "4 months" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
